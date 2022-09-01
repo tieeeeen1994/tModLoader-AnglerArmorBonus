@@ -27,5 +27,12 @@ namespace AnglerArmorBonus.Configs
         [Range(0, 100)]
         [Increment(1)]
         public int tripleCatchChance;
+
+        [Label("Max Stack Limit")]
+        [Tooltip("Catches that trigger the double/triple catch chance will never exceed allowable max stack for the catch.\n" +
+                 "e.g. Triple catching Frog Legs will make the item have a stack of 3.\n" +
+                 "This config will set Frog Legs to 1 even if it was tripled.")]
+        [DefaultValue(false)]
+        public bool maxStackLimit;
     }
 }

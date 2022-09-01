@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System;
+using Terraria;
 using Terraria.ModLoader;
 using static AnglerArmorBonus.Util;
 
@@ -16,6 +17,8 @@ namespace AnglerArmorBonus.ModPlayers
             {
                 if (AnglerArmorBonus.HasTripleCatch && Proc(AnglerArmorBonus.ServerConfig.tripleCatchChance)) fish.stack *= 3;
                 else fish.stack *= 2;
+
+                if (AnglerArmorBonus.ServerConfig.maxStackLimit && fish.stack > fish.maxStack) fish.stack = fish.maxStack;
             }
         }
     }
